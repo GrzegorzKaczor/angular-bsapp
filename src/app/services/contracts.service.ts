@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {ContractModel} from "../models/contract.model";
+import {ContractDto} from "../models/contractDto";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -11,12 +11,16 @@ export class ContractsService {
   constructor(private http: HttpClient) {
   }
 
-  getAllContracts(): Observable<Array<ContractModel>> {
-    return this.http.get<Array<ContractModel>>('http://localhost:8080/contract/all');
+  getAllContracts(): Observable<Array<ContractDto>> {
+    return this.http.get<Array<ContractDto>>('http://localhost:8080/contract/all');
   }
 
-  getActiveContracts(): Observable<Array<ContractModel>> {
-    return this.http.get<Array<ContractModel>>('http://localhost:8080/contract/active');
+  getActiveContracts(): Observable<Array<ContractDto>> {
+    return this.http.get<Array<ContractDto>>('http://localhost:8080/contract/active');
+  }
+
+  addContract(contract: ContractDto): Observable<ContractDto>{
+    console.log(contract)
+    return this.http.post<ContractDto>("http://localhost:8080/contract", contract);
   }
 }
-

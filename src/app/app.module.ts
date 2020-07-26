@@ -13,6 +13,7 @@ import {AboutComponent} from "./content/about/about.component";
 import {WelcomeComponent} from "./content/welcome/welcome.component";
 import {AddContractComponent} from './content/add-contract/add-contract.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 export const appRouters: Routes = [
   {path: '', component: WelcomeComponent},
@@ -34,6 +35,7 @@ export const appRouters: Routes = [
     CoreModule,
     ContentModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRouters)
   ],
   providers: [],

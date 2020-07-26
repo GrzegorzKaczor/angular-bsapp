@@ -3,8 +3,8 @@ import {AmountTypeEnum} from "./amountType.enum";
 import {AmountPeriodEnum} from "./amountPeriod.enum";
 
 
-export interface ContractModel {
-  id: string;
+export class ContractDto {
+  id: number;
   systemDto: SystemDtoModel;
   orderNumber: string;
   fromDate: Date;
@@ -13,5 +13,4 @@ export interface ContractModel {
   amountType: AmountTypeEnum;
   amountPeriod: AmountPeriodEnum;
   active: boolean;
-
 }

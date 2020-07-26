@@ -1,5 +1,5 @@
 
-export interface SystemDtoModel {
+export class SystemDtoModel {
   id: string;
   name: string;
   descriptionSystem: string;

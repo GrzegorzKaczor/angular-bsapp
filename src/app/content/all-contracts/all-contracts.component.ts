@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ContractsService} from "../../services/contracts.service";
-import {ContractModel} from "../../models/contract.model";
+import {ContractDto} from "../../models/contractDto";
 
 @Component({
   selector: 'app-all-contracts',
