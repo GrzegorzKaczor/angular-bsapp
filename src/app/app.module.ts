@@ -12,6 +12,7 @@ import {ContentModule} from "./content/content.module";
 import {AboutComponent} from "./content/about/about.component";
 import {WelcomeComponent} from "./content/welcome/welcome.component";
 import {AddContractComponent} from './content/add-contract/add-contract.component';
+import {UtilModule} from "./util/util.module";
 
 export const appRouters: Routes = [
   {path: '', component: WelcomeComponent},
