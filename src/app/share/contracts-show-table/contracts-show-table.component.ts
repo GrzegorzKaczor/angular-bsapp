@@ -2,10 +2,10 @@ import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-contracts-table',
-  templateUrl: './contracts-table.component.html',
-  styleUrls: ['./contracts-table.component.css']
+  templateUrl: './contracts-show-table.component.html',
+  styleUrls: ['./contracts-show-table.component.css']
 })
-export class ContractsTableComponent implements OnInit {
+export class ContractsShowTableComponent implements OnInit {
 
 
   @Input()
