@@ -3,41 +3,48 @@
   <div class="form-group" ngModelGroup="systemDto">
     <div class="mb-3">
       <label>Nazwa</label>
-      <input name="name" #SystemName="ngModel" ngModel type="text" class="form-control" required>
-      <div class="validation-error" *ngIf = "SystemName.invalid && SystemName.touched">Proszę uzupełnić</div>
+      <input name="name" #name="ngModel" ngModel type="text" class="form-control" required>
+      <div class="validation-error" *ngIf = "name.invalid && name.touched">Proszę uzupełnić</div>
     </div>
     <div class="mb-3">
       <label>Opis sytemu</label>
-      <textarea name="descriptionSystem" ngModel class="form-control" required></textarea>
+      <textarea name="descriptionSystem" #descriptionSystem = "ngModel" ngModel class="form-control" required></textarea>
+      <div class="validation-error" *ngIf = "descriptionSystem.invalid && descriptionSystem.touched">Proszę uzupełnić</div>
     </div>
     <div class="mb-3">
       <label>Technologie</label>
-      <input name="technologies" ngModel type="text" class="form-control" required>
+      <input name="technologies" #technologies="ngModel" ngModel type="text" class="form-control" required>
+      <div class="validation-error" *ngIf = "technologies.invalid && technologies.touched">Proszę uzupełnić</div>
     </div>
     <div class="mb-3">
       <label>Klient</label>
-      <input name="owner" ngModel type="text" class="form-control" required>
+      <input name="owner" #owner="ngModel" ngModel type="text" class="form-control" required>
+      <div class="validation-error" *ngIf = "owner.invalid && owner.touched">Proszę uzupełnić</div>
     </div>
   </div>
 
   <div class="form-group">
     <label class="h5 mb-4">Numer umowy</label>
-    <input name="orderNumber" ngModel type="text" class="form-control">
+    <input name="orderNumber" #orderNumber="ngModel" ngModel type="text" class="form-control">
+    <div class="validation-error" *ngIf = "orderNumber.invalid && orderNumber.touched">Proszę uzupełnić</div>
   </div>
 
   <p class="mt-4 mb-4 h5" >Umowa od</p>
   <div class="form-row align-items-center" ngModelGroup="fromDate">
     <div class="col-4 mb-3">
       <label>Rok</label>
-      <input name="year" ngModel type="number" class="form-control" placeholder="rrrr" required>
+      <input name="year" #fromDateYear="ngModel" ngModel type="number" class="form-control" placeholder="rrrr" required>
+      <div class="validation-error" *ngIf = "fromDateYear.invalid && fromDateYear.touched">Proszę uzupełnić</div>
     </div>
     <div class="col-4 mb-3">
       <label >Miesiąc</label>
-      <input name="month" ngModel type="number" class="form-control"  placeholder="mm" required>
+      <input name="month" #fromDateMonth="ngModel" ngModel type="number" class="form-control"  placeholder="mm" required>
+      <div class="validation-error" *ngIf = "fromDateMonth.invalid && fromDateMonth.touched">Proszę uzupełnić</div>
     </div>
     <div class="col-4">
       <label>Dzień</label>
-      <input name="day" ngModel type="number" class="form-control" placeholder="dd" required>
+      <input name="day" #fromDateDay="ngModel" ngModel type="number" class="form-control" placeholder="dd" required>
+      <div class="validation-error" *ngIf = "fromDateDay.invalid && fromDateDay.touched">Proszę uzupełnić</div>
     </div>
   </div>
 
@@ -45,15 +52,19 @@
   <div class="form-row align-items-center" ngModelGroup="toDate">
     <div class="col-4 mb-3">
       <label >Rok</label>
-      <input name="year" ngModel type="number" class="form-control"  placeholder="rrrr" required>
+      <input name="year" #toDateYear="ngModel" ngModel type="number" class="form-control"  placeholder="rrrr" required>
+      <div class="validation-error" *ngIf = "toDateYear.invalid && toDateYear.touched">Proszę uzupełnić</div>
+
     </div>
     <div class="col-4 mb-3">
       <label >Miesiąc</label>
-      <input name="month" ngModel type="number" class="form-control"  placeholder="mm" required>
+      <input name="month" #toDateMonth="ngModel" ngModel type="number" class="form-control"  placeholder="mm" required>
+      <div class="validation-error" *ngIf = "toDateMonth.invalid && toDateMonth.touched">Proszę uzupełnić</div>
     </div>
     <div class="col-4 mb-3">
       <label >Dzień</label>
-      <input name="day" ngModel type="number" class="form-control" placeholder="dd" required>
+      <input name="day" #toDateDay="ngModel" ngModel type="number" class="form-control" placeholder="dd" required>
+      <div class="validation-error" *ngIf = "toDateDay.invalid && toDateDay.touched">Proszę uzupełnić</div>
     </div>
   </div>
 
@@ -61,7 +72,8 @@
   <div class="form-row align-items-center">
     <div class="col-12 mt-0 mb-3">
       <label>Złotych</label>
-      <input name="amount" ngModel type="number" class="form-control" placeholder="0,00" required>
+      <input name="amount" #amount="ngModel" ngModel type="number" class="form-control" placeholder="0,00" required>
+      <div class="validation-error" *ngIf = "amount.invalid && amount.touched">Proszę uzupełnić</div>
     </div>
   </div>
 
@@ -69,24 +81,27 @@
   <div class="form-row align-items-center mt-3">
     <div class="col-4 mb-3">
       <label for="input-amount-type">Typ</label>
-      <select name="amountType" ngModel class="custom-select my-1 mr-sm-2" id="input-amount-type" required>
+      <select name="amountType" #amountType= "ngModel" ngModel class="custom-select my-1 mr-sm-2" id="input-amount-type" required>
         <option id="option-netto" value="NET">netto</option>
         <option id="option-brutto" value="BRU">brutto</option>
       </select>
+      <div class="validation-error" *ngIf = "amountType.invalid && amountType.touched">Proszę uzupełnić</div>
     </div>
     <div class="col-4 mb-3">
       <label >W skali</label>
-      <select name="amountPeriod" ngModel class="custom-select my-1 mr-sm-2 form-control" required>
+      <select name="amountPeriod" #amountPeriod = "ngModel" ngModel class="custom-select my-1 mr-sm-2 form-control" required>
         <option id='option-month' value="MONTH">miesiąc</option>
         <option id='option-year' value="YEAR">rok</option>
       </select>
+      <div class="validation-error" *ngIf = "amountPeriod.invalid && amountPeriod.touched">Proszę uzupełnić</div>
     </div>
     <div class="col-4 mb-3">
       <label>Aktywna</label>
-      <select name="active" ngModel class="custom-select my-1 mr-sm-2 form-control" required>
+      <select name="active" #active= "ngModel" ngModel class="custom-select my-1 mr-sm-2 form-control" required>
         <option id="option-true" value="true">tak</option>
         <option id="option-false" value="false">nie</option>
       </select>
+      <div class="validation-error" *ngIf = "active.invalid && active.touched">Proszę uzupełnić</div>
     </div>
   </div>
   <button class="btn btn-secondary mt-5 col-12 text-light mb-5" [disabled]="form.invalid">Zatwierdź</button>
