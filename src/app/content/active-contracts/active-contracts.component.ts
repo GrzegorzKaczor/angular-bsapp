@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ContractsService} from "../../services/contracts.service";
 
 @Component({
   selector: 'app-active-contracts',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveContractsComponent implements OnInit {
 
-  constructor() { }
+  public activeContracts;
+
+  constructor(private contractService: ContractsService) { }
 
   ngOnInit(): void {
+    this.contractService.getActiveContracts().subscribe(contracts =>
+      this.activeContracts = contracts);
   }
 
 }

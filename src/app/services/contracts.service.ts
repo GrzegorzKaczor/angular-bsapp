@@ -14,5 +14,9 @@ export class ContractsService {
   getAllContracts(): Observable<Array<ContractModel>> {
     return this.http.get<Array<ContractModel>>('http://localhost:8080/contract/all');
   }
+
+  getActiveContracts(): Observable<Array<ContractModel>> {
+    return this.http.get<Array<ContractModel>>('http://localhost:8080/contract/active');
+  }
 }
 
