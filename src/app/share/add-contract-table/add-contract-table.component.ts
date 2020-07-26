@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ContractsService} from "../../services/contracts.service";
 import {ContractDto} from "../../models/contractDto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-contract-table',
@@ -11,7 +12,8 @@ export class AddContractTableComponent implements OnInit {
 
   contract = new ContractDto();
 
-  constructor(private contractService: ContractsService) {
+  constructor(private contractService: ContractsService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -22,6 +24,7 @@ export class AddContractTableComponent implements OnInit {
     console.log(this.contract);
     this.contractService.addContract(this.contract).subscribe(cont =>
     console.log(cont));
+    this.router.navigate(['allContracts']);
   }
 
   mapDataToContract(data) {

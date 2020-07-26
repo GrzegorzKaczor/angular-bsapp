@@ -3,7 +3,8 @@
   <div class="form-group" ngModelGroup="systemDto">
     <div class="mb-3">
       <label>Nazwa</label>
-      <input name="name" ngModel type="text" class="form-control" required>
+      <input name="name" #SystemName="ngModel" ngModel type="text" class="form-control" required>
+      <div class="validation-error" *ngIf = "SystemName.invalid && SystemName.touched">Proszę uzupełnić</div>
     </div>
     <div class="mb-3">
       <label>Opis sytemu</label>
@@ -88,5 +89,5 @@
       </select>
     </div>
   </div>
-  <button class="btn btn-secondary mt-5 col-12 text-light mb-5">Zatwierdź</button>
+  <button class="btn btn-secondary mt-5 col-12 text-light mb-5" [disabled]="form.invalid">Zatwierdź</button>
 </form>
