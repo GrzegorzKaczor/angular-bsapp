@@ -22,8 +22,7 @@ export class AddContractTableComponent implements OnInit {
   onsubmit(data) {
     this.mapDataToContract(data);
     console.log(this.contract);
-    this.contractService.addContract(this.contract).subscribe(cont =>
-    console.log(cont));
+    this.contractService.addContract(this.contract).subscribe();
     this.router.navigate(['allContracts']);
   }
 
