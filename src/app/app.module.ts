@@ -12,7 +12,7 @@ import {ContentModule} from "./content/content.module";
 import {AboutComponent} from "./content/about/about.component";
 import {WelcomeComponent} from "./content/welcome/welcome.component";
 import {AddContractComponent} from './content/add-contract/add-contract.component';
-import {UtilModule} from "./util/util.module";
+import {HttpClientModule} from "@angular/common/http";
 
 export const appRouters: Routes = [
   {path: '', component: WelcomeComponent},
@@ -33,6 +33,7 @@ export const appRouters: Routes = [
     AppRoutingModule,
     CoreModule,
     ContentModule,
+    HttpClientModule,
     RouterModule.forRoot(appRouters)
   ],
   providers: [],

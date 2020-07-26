@@ -7,6 +7,7 @@ import {ActiveContractsComponent} from "./active-contracts/active-contracts.comp
 import {SystemsComponent} from "./systems/systems.component";
 import {AllContractsComponent} from "./all-contracts/all-contracts.component";
 import {UtilModule} from "../util/util.module";
+import {ContractsService} from "../services/contracts.service";
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {UtilModule} from "../util/util.module";
   imports: [
     CommonModule,
     UtilModule
-  ]
+  ],
+  providers: [ContractsService]
 })
 export class ContentModule { }

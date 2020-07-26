@@ -13,7 +13,21 @@
     </tr>
     </thead>
     <tbody>
-      <p><ng-content></ng-content> </p>
+    <tr *ngFor="let contract of contracts">
+      <th>{{contract.orderNumber}}</th>
+      <th>{{contract.systemDto.name}}</th>
+      <th>{{contract.fromDate.year}}-{{contract.fromDate.month}}-{{contract.fromDate.day}}</th>
+      <th>{{contract.toDate.year}}-{{contract.toDate.month}}-{{contract.toDate.day}}</th>
+      <th>{{contract.amount/100}}</th>
+      <th>{{contract.amountType}}</th>
+      <th>{{contract.amountPeriod}}</th>
+      <th>
+        <div class=text-center>
+          <button type="button" class="btn btn-warning btn-sm mr-2">Edycja</button>
+          <button type="button" class="btn btn-danger btn-sm">Usuń</button>
+        </div>
+      </th>
+    </tr>
     </tbody>
   </table>
 </section>

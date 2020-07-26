@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-contracts-table',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contracts-table.component.css']
 })
 export class ContractsTableComponent implements OnInit {
+
+
+  @Input()
+  public contracts;
 
   constructor() { }
 
