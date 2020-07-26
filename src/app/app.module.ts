@@ -1,16 +1,17 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {CoreModule} from "./core/core.module";
 import {RouterModule, Routes} from "@angular/router";
-import { AllContractsComponent } from './all-contracts/all-contracts.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { ActiveContractsComponent } from './active-contracts/active-contracts.component';
-import { SystemsComponent } from './systems/systems.component';
-import { AddContractComponent } from './add-contract/add-contract.component';
-import { AboutComponent } from './about/about.component';
+import {AllContractsComponent} from './content/all-contracts/all-contracts.component';
+import {ActiveContractsComponent} from './content/active-contracts/active-contracts.component';
+import {SystemsComponent} from './content/systems/systems.component';
+import {ContentModule} from "./content/content.module";
+import {AboutComponent} from "./content/about/about.component";
+import {WelcomeComponent} from "./content/welcome/welcome.component";
+import {AddContractComponent} from './content/add-contract/add-contract.component';
 
 export const appRouters: Routes = [
   {path: '', component: WelcomeComponent},
@@ -19,26 +20,22 @@ export const appRouters: Routes = [
   {path: 'systems', component: SystemsComponent},
   {path: 'addContract', component: AddContractComponent},
   {path: 'about', component: AboutComponent},
-  {path: "**", component: WelcomeComponent}
+  {path: '**', component: WelcomeComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllContractsComponent,
-    WelcomeComponent,
-    ActiveContractsComponent,
-    SystemsComponent,
-    AddContractComponent,
-    AboutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
+    ContentModule,
     RouterModule.forRoot(appRouters)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
