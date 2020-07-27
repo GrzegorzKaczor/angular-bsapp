@@ -23,7 +23,7 @@
       <th>{{contract.active}}</th>
       <th>
         <div class=text-center>
-          <button type="button" class="btn btn-warning btn-sm mr-2">Edycja</button>
+          <button type="button" class="btn btn-warning btn-sm mr-2" (click)="updateContract(contract.id)">Edycja</button>
           <button type="button" class="btn btn-danger btn-sm" (click)="deleteContract(contract.id)">Usuń</button>
         </div>
       </th>

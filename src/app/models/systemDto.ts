@@ -1,5 +1,5 @@
 
-export class SystemDtoModel {
+export class SystemDto {
   id: string;
   name: string;
   descriptionSystem: string;

@@ -14,6 +14,7 @@ import {WelcomeComponent} from "./content/welcome/welcome.component";
 import {AddContractComponent} from './content/add-contract/add-contract.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {UpdateContractComponent} from "./content/update-contract/update-contract.component";
 
 export const appRouters: Routes = [
   {path: '', component: WelcomeComponent},
@@ -22,6 +23,7 @@ export const appRouters: Routes = [
   {path: 'systems', component: SystemsComponent},
   {path: 'addContract', component: AddContractComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'update/:id',component: UpdateContractComponent},
   {path: '**', component: WelcomeComponent}
 ]
 

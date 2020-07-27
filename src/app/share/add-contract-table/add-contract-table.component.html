@@ -3,7 +3,7 @@
   <div class="form-group" ngModelGroup="systemDto">
     <div class="mb-3">
       <label>Nazwa</label>
-      <input name="name" #name="ngModel" ngModel type="text" class="form-control" required>
+      <input name="name" #name="ngModel" ngModel type="text" class="form-control" required [value]="val">
       <div class="validation-error" *ngIf = "name.invalid && name.touched">Proszę uzupełnić</div>
     </div>
     <div class="mb-3">

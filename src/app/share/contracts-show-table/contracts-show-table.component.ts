@@ -23,8 +23,10 @@ export class ContractsShowTableComponent implements OnInit {
   deleteContract(id) {
     this.contractService.deleteContract(id).subscribe(data =>
       this.router.navigate(['allContracts']));
+  }
 
-
+  updateContract(id){
+    this.router.navigate(['update', id]);
   }
 
 }

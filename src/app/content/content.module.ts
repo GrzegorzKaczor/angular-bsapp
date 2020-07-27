@@ -8,11 +8,12 @@ import {SystemsComponent} from "./systems/systems.component";
 import {AllContractsComponent} from "./all-contracts/all-contracts.component";
 import {ShareModule} from "../share/share.module";
 import {ContractsService} from "../services/contracts.service";
+import { UpdateContractComponent } from './update-contract/update-contract.component';
 
 
 @NgModule({
-  declarations: [AboutComponent, WelcomeComponent, AddContractComponent, ActiveContractsComponent, SystemsComponent, AllContractsComponent],
-  exports: [AboutComponent, WelcomeComponent, AddContractComponent, ActiveContractsComponent, SystemsComponent, AllContractsComponent],
+  declarations: [AboutComponent, WelcomeComponent, AddContractComponent, ActiveContractsComponent, SystemsComponent, AllContractsComponent, UpdateContractComponent],
+  exports: [AboutComponent, WelcomeComponent, AddContractComponent, ActiveContractsComponent, SystemsComponent, AllContractsComponent, UpdateContractComponent],
   imports: [
     CommonModule,
     ShareModule

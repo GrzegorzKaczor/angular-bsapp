@@ -1,11 +1,11 @@
-import { SystemDtoModel } from './systemDto.model';
+import { SystemDto } from './systemDto';
 import {AmountTypeEnum} from "./amountType.enum";
 import {AmountPeriodEnum} from "./amountPeriod.enum";
 
 
 export class ContractDto {
   id: number;
-  systemDto: SystemDtoModel;
+  systemDto: SystemDto;
   orderNumber: string;
   fromDate: Date;
   toDate: Date;

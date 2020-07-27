@@ -26,8 +26,11 @@ export class ContractsService {
   }
 
   deleteContract(id): Observable<number>{
-    return this.http.delete<number>(this.url + '/' + id)
+    return this.http.delete<number>(this.url + '/' + id);
   }
 
+  getContractById(id): Observable<ContractDto>{
+    return this.http.get<ContractDto>(this.url + '/' + id);
+  }
 
 }

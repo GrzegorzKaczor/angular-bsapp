@@ -36,8 +36,4 @@ export class AddContractTableComponent implements OnInit {
     this.contract.amountPeriod = data.amountPeriod;
     this.contract.active = data.active;
   }
-
-
-
-
 }
