@@ -11,7 +11,7 @@ import {ContractDto} from "../../models/contractDto";
 export class UpdateContractComponent implements OnInit {
 
   id: number;
-  public contract;
+  public contract: ContractDto;
 
   constructor(private route: ActivatedRoute,
               private contractService: ContractsService) {
